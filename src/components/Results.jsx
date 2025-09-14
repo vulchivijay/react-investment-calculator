@@ -16,10 +16,10 @@ export default function Results({input}) {
             </tr>
         </thead>
         <tbody>
-          {results && results.map((yearData) => {
+          {results && results.map((yearData, index) => {
             const totalInterest = yearData.valueEndOfYear - yearData.annualInvestment * yearData.year - initialInvestment;
             return (
-              <tr key={yearData.year}>
+              <tr key={index}>
                 <td>{yearData.year}</td>
                 <td>{formatter.format(yearData.valueEndOfYear)}</td>
                 <td>{formatter.format(yearData.interest)}</td>
